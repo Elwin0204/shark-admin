@@ -1,0 +1,135 @@
+/**
+ * @author Elwin
+ * @description 蔚蓝晴空主题
+ */
+/* stylelint-disable */
+html {
+  body.theme-blue-sky {
+    $base-color-default: #409EFF;
+    //横向布局纵向布局时菜单背景色
+    $base-menu-background: #fff;
+    //菜单hover背景色
+    $base-menu-background-hover: #f2f2fb;
+    //菜单选中背景色
+    $base-menu-background-active: #f2f2fb;
+    //菜单hover文字颜色
+    $base-menu-color-hover: #409EFF;
+    //菜单选中文字颜色
+    $base-menu-color-active: #409EFF;
+    // 菜单hover左边框颜色
+    $base-menu-border-left-hover: #409EFF;
+    // 菜单选中左边框颜色
+    $base-menu-border-left-active: #409EFF;
+    // 图标颜色
+    $base-icon-color: #575D6C;
+    // 图标hover颜色
+    $base-icon-color-hover: #409EFF;
+    // 顶部菜单背景色
+    $base-nav-bar-background: #292a2e;
+    // 顶部标签页背景色
+    $base-tabs-bar-background: #292a2e;
+    // 顶部标签页分割线
+    $base-tabs-bar-border: #47494e;
+    // 顶部标签颜色
+    $base-tabs-item-color: #fff;
+    // 顶部标签边框颜色
+    $base-tabs-item-border-color: #409EFF;
+    // 顶部标签hover颜色
+    $base-tabs-item-color-hover: #409EFF;
+    // 顶部标签选中颜色
+    $base-tabs-item-color-active: #409EFF;
+    // 右侧drawer背景色
+    $base-drawer-background: #292a2e;
+    // 内容页容器背景色
+    $base-main-background: #292a2e;
+    // theme-bar背景色
+    $base-theme-bar-background: #409EFF;
+    // radio选中背景色
+    $base-radio-background: #409EFF;
+    // 按钮颜色
+    $base-btn-color: #409EFF;
+    // 按钮边框颜色
+    $base-btn--border-color: #409EFF;
+    .side-bar-container {
+      background-color: $base-menu-background;
+      .logo-container-vertical {
+        background-color: $base-menu-background !important;
+      }
+      .el-menu {
+        background-color: $base-menu-background !important;
+      }
+      .el-menu-item,
+      .el-submenu {
+        margin: 0px !important;
+        border-radius: 0px !important;
+        background-color: $base-menu-background !important;
+        .el-submenu__title {
+          border-left: 3px solid transparent;
+        }
+        .el-submenu__title:hover {
+          color: $base-menu-color-hover !important;
+          border-left-color: $base-menu-border-left-hover;
+          background-color: $base-menu-background-hover !important;
+          .sk-fa-icon {
+            color: $base-icon-color-hover !important;
+            fill: $base-icon-color-hover !important;
+          }
+        }
+      }
+      .el-menu-item {
+        border-left: 3px solid transparent;
+        &:hover {
+          border-left-color: $base-menu-border-left-hover;
+          color: $base-menu-color-hover !important;
+          background-color: $base-menu-background-hover !important;
+          .sk-fa-icon {
+            color: $base-icon-color-hover !important;
+            fill: $base-icon-color-hover !important;
+          }
+        }
+        &.is-active {
+          border-left-color: $base-menu-border-left-active;
+          color: $base-menu-color-active !important;
+          background-color: $base-menu-background-active !important;
+          .sk-fa-icon {
+            color: $base-icon-color-hover !important;
+            fill: $base-icon-color-hover !important;
+          }
+        }
+      }
+    }
+
+    .tabs-bar-container {
+      .el-tabs__item {
+        &:hover {
+          color: $base-tabs-item-color-hover;
+        }
+      }
+      .el-tabs__item.is-active {
+        color: $base-tabs-item-color-active;
+        border-color: $base-tabs-item-border-color !important;
+      }
+    }
+
+    .el-drawer {
+      .el-radio-button__orig-radio:checked + .el-radio-button__inner {
+        background-color: $base-radio-background;
+        border-color: $base-radio-background;
+        box-shadow: -1px 0 0 0 $base-radio-background;
+      }
+    }
+
+    .el-drawer__body {
+      .btn-confirm-primary:hover {
+        color: $base-btn-color !important;
+      }
+      .btn-confirm-primary .line_all {
+        border-color: $base-btn--border-color !important;
+      }
+    }
+
+    .theme-bar-setting {
+      background-color: $base-theme-bar-background;
+    }
+  }
+}

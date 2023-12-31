@@ -1,0 +1,262 @@
+/**
+ * @author Elwin
+ * @description 暗黑骑士主题
+ */
+/* stylelint-disable */
+
+html {
+  body.theme-dark-knight {
+    $base-color-default: #5061b9;
+    //横向布局时菜单背景色
+    $base-menu-background: #181b25;
+    //菜单hover背景色
+    $base-menu-background-hover: #292a2e;
+    //菜单选中背景色
+    $base-menu-background-active: #292a2e;
+    //菜单hover文字颜色
+    $base-menu-color-hover: #5061b9;
+    //菜单选中文字颜色
+    $base-menu-color-active: #5061b9;
+    // 菜单hover左边框颜色
+    $base-menu-border-left-hover: #5061b9;
+    // 菜单选中左边框颜色
+    $base-menu-border-left-active: #5061b9;
+    //纵向布局时菜单背景色
+    $base-menu-horizontal-background: #292a2e;
+    //右侧panel图标颜色
+    $base-theme-bar-icon-color: #fff;
+    // 图标颜色
+    $base-icon-color: #575D6C;
+    // 图标hover颜色
+    $base-icon-color-hover: #5061b9;
+    // 顶部菜单背景色
+    $base-nav-bar-background: #292a2e;
+    // 顶部icon颜色
+    $base-nav-bar-icon-color: #606266;
+    // top bar背景颜色
+    $base-top-bar-background: #292a2e;
+    // 顶部标签页背景色
+    $base-tabs-bar-background: #292a2e;
+    // 顶部标签页分割线
+    $base-tabs-bar-border: #47494e;
+    // 顶部标签颜色
+    $base-tabs-item-color: #fff;
+    // 顶部标签hover颜色
+    $base-tabs-item-color-hover: #5E7CE0;
+    // 顶部标签选中颜色
+    $base-tabs-item-color-active: #5E7CE0;
+    // 右侧drawer背景色
+    $base-drawer-background: #292a2e;
+    // 内容页容器背景色
+    $base-main-background: #3f4044;
+    // theme-bar背景色
+    $base-theme-bar-background: #2e2d45;
+    // 按钮颜色
+    $base-btn-color: #5E7CE0;
+    // 按钮边框颜色
+    $base-btn--border-color: #5E7CE0;
+    .side-bar-container {
+      background-color: $base-menu-background;
+      .logo-container-vertical {
+        background-color: $base-menu-background !important;
+      }
+      .el-menu {
+        background-color: $base-menu-background !important;
+        .sk-fa-icon {
+          color: $base-icon-color !important;
+          fill: $base-icon-color !important;
+        }
+      }
+      .el-menu-item,
+      .el-submenu {
+        margin: 0px !important;
+        border-radius: 0px !important;
+        background-color: $base-menu-background !important;
+        .el-submenu__title {
+          background-color: $base-menu-background !important;
+        }
+        .el-submenu__title:hover {
+          border-left-color: $base-menu-border-left-hover;
+          .sk-fa-icon {
+            color: $base-icon-color-hover !important;
+            fill: $base-icon-color-hover !important;
+          }
+        }
+      }
+      .el-menu-item {
+        border-left: 3px solid transparent;
+        &:hover {
+          border-left-color: $base-menu-border-left-hover;
+          color: $base-menu-color-hover !important;
+          background-color: $base-menu-background-active !important;
+          .sk-fa-icon {
+            color: $base-icon-color-hover !important;
+            fill: $base-icon-color-hover !important;
+          }
+        }
+        &.is-active {
+          border-left-color: $base-menu-border-left-active;
+          color: $base-menu-color-active !important;
+          background-color: $base-menu-background-active !important;
+          .sk-fa-icon {
+            color: $base-icon-color-hover !important;
+            fill: $base-icon-color-hover !important;
+          }
+        }
+      }
+
+      .sk-icon-bg {
+        border-left-color: #181b25 !important;
+        .sk-icon-toggle {
+          fill: #fff;
+        }
+      }
+    }
+
+    .nav-bar-container {
+      background-color: $base-nav-bar-background !important;
+      .left-panel {
+        .fold-unfold {
+          color: #fff9;
+        }
+      }
+      .right-panel {
+        .sk-fa-icon {
+          fill: $base-icon-color;
+        }
+      }
+    }
+
+    .top-bar-container {
+      background-color: $base-top-bar-background !important;
+      .sk-main {
+        background-color: $base-top-bar-background !important;
+        .el-menu.el-menu--horizontal {
+          background-color: $base-top-bar-background !important;
+          .el-menu-item {
+            &.is-active {
+              border-bottom-color: transparent !important;
+            }
+          }
+        }
+      }
+    }
+    .el-menu.el-menu--horizontal {
+      background-color: $base-menu-background !important;
+      .sk-fa-icon {
+        color: $base-icon-color !important;
+        fill: $base-icon-color !important;
+      }
+    }
+
+    .el-menu.el-menu--horizontal {
+      .el-menu-item,
+      .el-submenu {
+        margin: 0px !important;
+        border-radius: 0px !important;
+        background-color: $base-menu-horizontal-background !important;
+        .el-submenu__title {
+          background-color: $base-menu-horizontal-background !important;
+        }
+        .el-submenu__title:hover {
+          border-left-color: transparent;
+          color: $base-menu-color-hover !important;
+          .sk-fa-icon {
+            color: $base-icon-color-hover !important;
+            fill: $base-icon-color-hover !important;
+          }
+        }
+        &.is-active {
+          .sk-fa-icon {
+            color: $base-icon-color-hover !important;
+            fill: $base-icon-color-hover !important;
+          }
+        }
+      }
+      .el-menu-item {
+        border-left: 3px solid transparent;
+        &:hover {
+          border-left-color: transparent;
+          color: $base-menu-color-hover !important;
+          background-color: $base-menu-background-active !important;
+          .sk-fa-icon {
+            color: $base-icon-color-hover !important;
+            fill: $base-icon-color-hover !important;
+          }
+        }
+        &.is-active {
+          border-left-color: transparent;
+          color: $base-menu-color-active !important;
+          background-color: $base-menu-background-active !important;
+          .sk-fa-icon {
+            color: $base-icon-color-hover !important;
+            fill: $base-icon-color-hover !important;
+          }
+        }
+      }
+    }
+    .el-menu--horizontal {
+      .el-menu--popup {
+        padding: 0 !important;
+      }
+    }
+
+    .tabs-bar-container {
+      background-color: $base-tabs-bar-background !important;
+      border-top-color: $base-tabs-bar-border;
+      .el-tabs__item {
+        color: $base-tabs-item-color;
+        &:hover {
+          color: $base-tabs-item-color-hover;
+        }
+      }
+      .el-tabs__item.is-active {
+        color: $base-tabs-item-color-active;
+      }
+    }
+
+    .layout-container-horizontal {
+      .tag-view-show {
+        background-color: $base-tabs-bar-background !important;
+      }
+    }
+
+    .logo-container-horizontal {
+      background-color: $base-tabs-bar-background !important;
+    }
+
+    .shark-admin-wrapper {
+      background-color: $base-main-background;
+    }
+
+    .el-drawer {
+      background-color: $base-drawer-background;
+    }
+
+    .el-drawer__body {
+      .btn-confirm-primary {
+        border-color: rgba(255, 255, 255, 0.2) !important;
+      }
+      .btn-confirm-primary .line_tl {
+        border-color: #fff !important;
+      }
+      .btn-confirm-primary .line_tr {
+        border-color: #fff !important;
+      }
+      .btn-confirm-primary .line_bl {
+        border-color: #fff !important;
+      }
+      .btn-confirm-primary .line_br {
+        border-color: #fff !important;
+      }
+    }
+
+    .theme-bar-setting {
+      background-color: $base-theme-bar-background;
+      .sk-fa-icon {
+        color: $base-theme-bar-icon-color !important;
+        fill: $base-theme-bar-icon-color !important;
+      }
+    }
+  }
+}
