@@ -2,7 +2,7 @@
 
 简体中文
 
-<div align="center"><img width="200" src="https://fastly.jsdelivr.net/gh/elwin0204/image/logo/shark.png"/>
+<div align="center"><img width="200" src="https://fastly.jsdelivr.net/gh/elwin0204/shark-resource@1.0.0/shark-admin/image/shark.png"/>
 <h1> shark-admin</h1>
 
 <p>真我色彩，永远相信美好的事情即将发生</p>
