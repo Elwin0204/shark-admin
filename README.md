@@ -35,7 +35,7 @@ git clone https://github.com/elwin0204/shark-admin.git
 # 安装依赖
 npm i --registry=http://mirrors.cloud.tencent.com/npm/
 # 本地开发 启动项目
-npm run serve
+npm run serve(或者npm run dev)
 ```
 
 ## 🔊 友情链接
