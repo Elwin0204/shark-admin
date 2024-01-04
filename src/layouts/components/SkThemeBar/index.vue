@@ -199,26 +199,7 @@
       },
       handleGetCode() {
         const url = 'https://github.com/elwin0204/shark-admin'
-        let path = this.$route.path + '/index.vue'
-        if (path === '/vab/menu1/menu1-1/menu1-1-1/index.vue') {
-          path = '/vab/nested/menu1/menu1-1/menu1-1-1/index.vue'
-        }
-        if (path === '/vab/icon/awesomeIcon/index.vue') {
-          path = '/vab/icon/index.vue'
-        }
-        if (path === '/vab/icon/remixIcon/index.vue') {
-          path = '/vab/icon/remixIcon.vue'
-        }
-        if (path === '/vab/icon/colorfulIcon/index.vue') {
-          path = '/vab/icon/colorfulIcon.vue'
-        }
-        if (path === '/vab/table/comprehensiveTable/index.vue') {
-          path = '/vab/table/index.vue'
-        }
-        if (path === '/vab/table/inlineEditTable/index.vue') {
-          path = '/vab/table/inlineEditTable.vue'
-        }
-        window.open(url + path)
+        window.open(url)
       },
     },
   }

@@ -49,6 +49,12 @@
           width="240"
           fixed="left"
         ></el-table-column>
+        <el-table-column
+          show-overflow-tooltip
+          prop="code"
+          label="菜单编码"
+          width="180"
+        ></el-table-column>
         <el-table-column prop="id" label="id" width="120"></el-table-column>
         <el-table-column
           prop="parentId"
@@ -112,6 +118,16 @@
         <el-table-column show-overflow-tooltip label="标签" align="center">
           <template #default="{ row }">
             {{ row.badge }}
+          </template>
+        </el-table-column>
+        <el-table-column
+          show-overflow-tooltip
+          label="是否禁用"
+          width="150"
+          align="center"
+        >
+          <template #default="{ row }">
+            {{ row.disabled ? '是' : '否' }}
           </template>
         </el-table-column>
         <el-table-column fixed="right" label="操作" width="200" align="center">
@@ -204,7 +220,6 @@
       async fetchNavData() {
         const { data } = await getRouteList()
         this.navList = arr2Tree(data)
-        console.log('nav', data, this.navList)
       },
       async fetchData() {
         this.listLoading = true

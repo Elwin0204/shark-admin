@@ -106,17 +106,22 @@
         @current-change="handleCurrentChange"
       ></el-pagination>
     </el-card>
-    <role-edit ref="edit" @fetch-data="fetchData"></role-edit>
+    <role-edit ref="REF_Edit" @fetch-data="fetchData"></role-edit>
+    <role-permission
+      ref="REF_AssignPermission"
+      @fetch-data="fetchData"
+    ></role-permission>
   </div>
 </template>
 
 <script>
   import { getList, doDelete } from '@/api/roleManagement'
   import RoleEdit from './components/RoleEdit'
+  import RolePermission from './components/RolePermission'
 
   export default {
     name: 'RoleManagement',
-    components: { RoleEdit },
+    components: { RoleEdit, RolePermission },
     data() {
       return {
         list: null,
@@ -141,13 +146,14 @@
       },
       handleEdit(row) {
         if (row.role) {
-          this.$refs['edit'].showEdit(row)
+          this.$refs['REF_Edit'].showEdit(row)
         } else {
-          this.$refs['edit'].showEdit()
+          this.$refs['REF_Edit'].showEdit()
         }
       },
       assignPermission(row) {
         console.log('assignPermission', row)
+        this.$refs['REF_AssignPermission'].showPermission(row)
       },
       handleDelete(row) {
         if (row.id) {

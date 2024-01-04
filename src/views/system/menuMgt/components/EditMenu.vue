@@ -11,11 +11,18 @@
           <el-form-item label="菜单名称" prop="title">
             <el-input v-model="form.title" autocomplete="off"></el-input>
           </el-form-item>
+          <el-form-item label="菜单编码" prop="title">
+            <el-input v-model="form.code" autocomplete="off"></el-input>
+          </el-form-item>
           <el-form-item label="id" prop="id">
             <el-input v-model="form.id" autocomplete="off"></el-input>
           </el-form-item>
           <el-form-item label="parentId" prop="parentId">
-            <el-input v-model="form.parentId" autocomplete="off"></el-input>
+            <el-input
+              v-model="form.parentId"
+              autocomplete="off"
+              disabled
+            ></el-input>
           </el-form-item>
           <el-form-item label="路由地址" prop="path">
             <el-input v-model="form.path" autocomplete="off"></el-input>
@@ -86,6 +93,16 @@
               ></el-option>
             </el-select>
           </el-form-item>
+          <el-form-item label="是否禁用" prop="noCache">
+            <el-select v-model="form.disabled" placeholder="请选择">
+              <el-option
+                v-for="item in disabledOptions"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
+          </el-form-item>
         </el-col>
       </el-row>
     </el-form>
@@ -105,6 +122,7 @@
       return {
         form: {
           title: '',
+          code: '',
           id: '',
           parentId: '',
           path: '',
@@ -120,6 +138,9 @@
         rules: {
           title: [
             { required: true, trigger: 'blur', message: '请输入菜单名称' },
+          ],
+          code: [
+            { required: true, trigger: 'blur', message: '请输入菜单编码' },
           ],
           id: [{ required: true, trigger: 'blur', message: '请输入id' }],
           path: [
@@ -203,6 +224,16 @@
             value: false,
           },
         ],
+        disabledOptions: [
+          {
+            label: '是',
+            value: true,
+          },
+          {
+            label: '否',
+            value: false,
+          },
+        ],
         action: '',
       }
     },
@@ -212,6 +243,7 @@
         if (action === 'add') {
           this.action = 'add'
           this.title = '新增'
+          this.form = Object.assign({}, { parentId: row.id })
         } else if (action === 'edit') {
           this.action = 'edit'
           this.title = '编辑'

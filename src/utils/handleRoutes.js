@@ -5,7 +5,7 @@
  * @returns {*}
  */
 export function convertRouter(asyncRoutes) {
-  return asyncRoutes.routeMap((route) => {
+  return asyncRoutes.nodeMap((route) => {
     if (route.component) {
       if (route.component === 'Layout') {
         route.component = (resolve) => require(['@/layouts'], resolve)
@@ -65,21 +65,26 @@ export function filterAsyncRoutes(routes, permissions) {
 /**
  * @author Elwin
  * @description 将数组转为树形结构
- * @param routes
+ * @param nodeList 节点数组
+ * @param assignPermission 分配权限时按钮节点如何处理
  * @returns {[]}
  */
-export function arr2Tree(routes) {
-  const routeTree = []
-  const routeMap = {}
-  for (const node of routes) {
-    routeMap[node.id] = { ...node, children: [] }
+export function arr2Tree(nodeList, assignPermission = false) {
+  const nodeTree = []
+  const nodeMap = {}
+  for (const node of nodeList) {
+    nodeMap[node.id] = { ...node, children: [], btnPermissions: [] }
   }
-  for (const node of routes) {
+  for (const node of nodeList) {
     if (!node.parentId) {
-      routeTree.push(routeMap[node.id])
+      nodeTree.push(nodeMap[node.id])
     } else {
-      routeMap[node.parentId].children.push(routeMap[node.id])
+      if (node.type === 'button' && assignPermission) {
+        nodeMap[node.parentId].btnPermissions.push(nodeMap[node.id])
+      } else {
+        nodeMap[node.parentId].children.push(nodeMap[node.id])
+      }
     }
   }
-  return routeTree
+  return nodeTree
 }
