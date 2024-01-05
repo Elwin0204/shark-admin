@@ -6,24 +6,21 @@
     @close="close"
   >
     <el-form ref="form" :model="form" :rules="rules" label-width="80px">
-      <el-form-item label="用户名" prop="username">
-        <el-input v-model.trim="form.username" autocomplete="off"></el-input>
+      <el-form-item label="字典名称" prop="name">
+        <el-input v-model.trim="form.name" autocomplete="off"></el-input>
       </el-form-item>
-      <el-form-item label="密码" prop="password">
-        <el-input
-          v-model.trim="form.password"
-          type="password"
-          autocomplete="off"
-        ></el-input>
+      <el-form-item label="字典值" prop="code">
+        <el-input v-model.trim="form.code" autocomplete="off"></el-input>
       </el-form-item>
-      <el-form-item label="邮箱" prop="email">
-        <el-input v-model.trim="form.email" autocomplete="off"></el-input>
+      <el-form-item label="排序" prop="sort">
+        <el-input-number
+          v-model.trim="form.sort"
+          controls-position="right"
+          :min="0"
+        ></el-input-number>
       </el-form-item>
-      <el-form-item label="权限" prop="permissions">
-        <el-checkbox-group v-model="form.permissions">
-          <el-checkbox label="admin"></el-checkbox>
-          <el-checkbox label="editor"></el-checkbox>
-        </el-checkbox-group>
+      <el-form-item label="备注">
+        <el-input v-model.trim="form.remark" autocomplete="off"></el-input>
       </el-form-item>
     </el-form>
     <div slot="footer" class="dialog-footer">
@@ -37,26 +34,19 @@
   import { doEdit } from '@/api/userManagement'
 
   export default {
-    name: 'UserManagementEdit',
+    name: 'ParentDictEdit',
     data() {
       return {
         form: {
-          username: '',
-          password: '',
-          email: '',
-          permissions: [],
+          name: '',
+          code: '',
+          sort: '',
+          remark: '',
         },
         rules: {
-          username: [
-            { required: true, trigger: 'blur', message: '请输入用户名' },
-          ],
-          password: [
-            { required: true, trigger: 'blur', message: '请输入密码' },
-          ],
-          email: [{ required: true, trigger: 'blur', message: '请输入邮箱' }],
-          permissions: [
-            { required: true, trigger: 'blur', message: '请选择权限' },
-          ],
+          name: [{ required: true, trigger: 'blur', message: '请输入用户名' }],
+          code: [{ required: true, trigger: 'blur', message: '请输入密码' }],
+          sort: [{ required: true, trigger: 'blur', message: '请输入邮箱' }],
         },
         title: '',
         dialogFormVisible: false,
@@ -66,9 +56,9 @@
     methods: {
       showEdit(row) {
         if (!row) {
-          this.title = '新增'
+          this.title = '新增字典-父项'
         } else {
-          this.title = '编辑'
+          this.title = '编辑字典-父项'
           this.form = Object.assign({}, row)
         }
         this.dialogFormVisible = true

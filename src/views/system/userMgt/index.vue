@@ -1,7 +1,7 @@
 <template>
   <div class="user-container">
     <el-card>
-      <el-row type="flex" align="middle" :gutter="20">
+      <el-row type="flex" :gutter="20">
         <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
           <el-form :inline="true" :model="queryForm" @submit.native.prevent>
             <el-form-item>
@@ -314,7 +314,7 @@
       .btns-box {
         display: flex;
         justify-content: flex-end;
-        align-items: center;
+        align-items: flex-start;
         .el-form-item {
           margin-bottom: 0;
         }
