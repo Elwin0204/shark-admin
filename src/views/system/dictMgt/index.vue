@@ -222,7 +222,11 @@
         if (!this.parentRow || Object.keys(this.parentRow).length === 0) {
           this.$message.info('请点击父级字典项')
         } else {
-          console.log('删除', this.parentRow)
+          this.$baseConfirm('你确定要删除当前项吗', null, async () => {
+            const { msg } = await doDelete({ codeList: this.parentRow.code })
+            this.$baseMessage(msg, 'success')
+            this.fetchParentData()
+          })
         }
       },
       handleChildEdit(row) {
@@ -235,17 +239,17 @@
       handleChildDelete(row) {
         if (row && row.code) {
           this.$baseConfirm('你确定要删除当前项吗', null, async () => {
-            const { msg } = await doDelete({ ids: row.id })
+            const { msg } = await doDelete({ codeList: row.code })
             this.$baseMessage(msg, 'success')
-            this.fetchData()
+            this.fetchChildrenData()
           })
         } else {
           if (this.selectRows.length > 0) {
-            const ids = this.selectRows.map((item) => item.code).join()
+            const codeList = this.selectRows.map((item) => item.code).join()
             this.$baseConfirm('你确定要删除选中项吗', null, async () => {
-              const { msg } = await doDelete({ ids })
+              const { msg } = await doDelete({ codeList })
               this.$baseMessage(msg, 'success')
-              this.fetchData()
+              this.fetchChildrenData()
             })
           } else {
             this.$baseMessage('未选中任何行', 'error')
