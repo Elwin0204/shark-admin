@@ -5,6 +5,8 @@ import router from './router'
 import './plugins'
 import i18n from '@/i18n'
 import { isMock } from '@/config'
+import VueParticles from 'vue-particles'
+Vue.use(VueParticles)
 
 if (isMock || process.env.NODE_ENV === 'development') {
   const { mockXHR } = require('@/utils/static')

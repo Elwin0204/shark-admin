@@ -1,75 +1,85 @@
 <template>
   <div class="login-container">
+    <div class="login-particles">
+      <vue-particles
+        color="#dedede"
+        :particle-opacity="0.7"
+        :particles-number="80"
+        shape-type="circle"
+        :particle-size="4"
+        lines-color="#dedede"
+        :lines-width="1"
+        :line-linked="true"
+        :line-opacity="0.4"
+        :lines-distance="150"
+        :move-speed="3"
+        :hover-effect="true"
+        hover-mode="grab"
+        :click-effect="true"
+        click-mode="push"
+      ></vue-particles>
+    </div>
     <el-alert
       title="What's up, guys. Welcome to shark-admin"
       type="success"
       :closable="false"
       style="position: fixed"
     ></el-alert>
-    <el-row>
-      <el-col :xs="24" :sm="24" :md="12" :lg="16" :xl="16">
-        <div style="color: transparent">占位符</div>
-      </el-col>
-      <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="8">
-        <el-form
-          ref="form"
-          :model="form"
-          :rules="rules"
-          class="login-form"
-          label-position="left"
-        >
-          <div class="title">hello !</div>
-          <div class="title-tips">欢迎来到{{ title }}！</div>
-          <el-form-item style="margin-top: 40px" prop="username">
-            <span class="svg-container svg-container-admin">
-              <v-icon name="user" />
-            </span>
-            <el-input
-              v-model.trim="form.username"
-              v-focus
-              placeholder="请输入用户名"
-              tabindex="1"
-              type="text"
-            />
-          </el-form-item>
-          <el-form-item prop="password">
-            <span class="svg-container">
-              <v-icon name="lock" />
-            </span>
-            <el-input
-              :key="passwordType"
-              ref="password"
-              v-model.trim="form.password"
-              :type="passwordType"
-              tabindex="2"
-              placeholder="请输入密码"
-              @keyup.enter.native="handleLogin"
-            />
-            <span
-              v-if="passwordType === 'password'"
-              class="show-password"
-              @click="handlePassword"
-            >
-              <v-icon name="eye-slash"></v-icon>
-            </span>
-            <span v-else class="show-password" @click="handlePassword">
-              <v-icon name="eye"></v-icon>
-            </span>
-          </el-form-item>
-          <el-button
-            :loading="loading"
-            class="login-btn"
-            type="primary"
-            @click="handleLogin"
+    <div class="login-dialog">
+      <el-form
+        ref="form"
+        :model="form"
+        :rules="rules"
+        class="login-form"
+        label-position="left"
+      >
+        <div class="title-tips">欢迎来到{{ title }}！</div>
+        <el-form-item style="margin-top: 40px" prop="username">
+          <span class="svg-container svg-container-admin">
+            <v-icon name="user" />
+          </span>
+          <el-input
+            v-model.trim="form.username"
+            v-focus
+            placeholder="请输入用户名"
+            tabindex="1"
+            type="text"
+          />
+        </el-form-item>
+        <el-form-item prop="password">
+          <span class="svg-container">
+            <v-icon name="lock" />
+          </span>
+          <el-input
+            :key="passwordType"
+            ref="password"
+            v-model.trim="form.password"
+            :type="passwordType"
+            tabindex="2"
+            placeholder="请输入密码"
+            @keyup.enter.native="handleLogin"
+          />
+          <span
+            v-if="passwordType === 'password'"
+            class="show-password"
+            @click="handlePassword"
           >
-            登录
-          </el-button>
-          <router-link to="/register">
-            <div style="margin-top: 20px">注册</div>
-          </router-link>
-        </el-form>
-      </el-col>
-    </el-row>
+            <v-icon name="eye-slash"></v-icon>
+          </span>
+          <span v-else class="show-password" @click="handlePassword">
+            <v-icon name="eye"></v-icon>
+          </span>
+        </el-form-item>
+        <el-button
+          :loading="loading"
+          class="login-btn"
+          type="primary"
+          @click="handleLogin"
+        >
+          登录
+        </el-button>
+      </el-form>
+    </div>
   </div>
 </template>
 
@@ -190,29 +200,41 @@
 <style lang="scss" scoped>
   .login-container {
     height: 100vh;
-    background: url('~@/assets/images/background.jpg') center center fixed
-      no-repeat;
+    position: relative;
+    background-image: url('../../assets/images/bg.jpg');
     background-size: cover;
-
-    .title {
-      font-size: 54px;
-      font-weight: 500;
-      color: rgba(14, 18, 26, 1);
+    .login-particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      // z-index: -1;
+    }
+    .login-dialog {
+      width: 450px;
+      background-color: rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
 
     .title-tips {
       margin-top: 29px;
-      font-size: 26px;
+      font-size: 20px;
       font-weight: 400;
       color: rgba(14, 18, 26, 1);
+      text-align: center;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
 
     .login-btn {
       display: inherit;
-      width: 220px;
-      height: 60px;
+      width: 100%;
+      height: 50px;
       margin-top: 5px;
       border: 0;
 
@@ -224,7 +246,7 @@
     .login-form {
       position: relative;
       max-width: 100%;
-      margin: calc((100vh - 425px) / 2) 10% 10%;
+      padding: 30px 50px;
       overflow: hidden;
 
       .forget-password {
@@ -315,7 +337,7 @@
         box-sizing: border-box;
 
         input {
-          height: 58px;
+          height: 50px;
           padding-left: 45px;
           font-size: $base-font-size-default;
           line-height: 58px;

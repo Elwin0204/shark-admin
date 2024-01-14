@@ -1,4 +1,3 @@
-
 const data = [
   {
     id: '1',
@@ -11,7 +10,7 @@ const data = [
     time: '0.015',
     ipAddrees: '171.120.210.128',
     joinTime: '2022-02-09 15:09:34',
-    status: '正常'
+    status: '正常',
   },
   {
     id: '2',
@@ -24,7 +23,7 @@ const data = [
     time: '0.045',
     joinTime: '2022-02-09 15:09:34',
     status: '正常',
-    ipAddrees: '124.92.199.219'
+    ipAddrees: '124.92.199.219',
   },
   {
     id: '3',
@@ -37,7 +36,7 @@ const data = [
     time: '0.027',
     joinTime: '2022-02-09 15:09:34',
     status: '正常',
-    ipAddrees: '39.155.212.237'
+    ipAddrees: '39.155.212.237',
   },
   {
     id: '4',
@@ -50,7 +49,7 @@ const data = [
     time: '2.397',
     joinTime: '2022-02-09 15:09:34',
     status: '失败',
-    ipAddrees: '113.65.14.222'
+    ipAddrees: '113.65.14.222',
   },
   {
     id: '5',
@@ -63,7 +62,7 @@ const data = [
     time: '0.016',
     joinTime: '2022-02-09 15:09:34',
     status: '正常',
-    ipAddrees: '113.128.81.221'
+    ipAddrees: '113.128.81.221',
   },
   {
     id: '6',
@@ -76,7 +75,7 @@ const data = [
     time: '0.051',
     joinTime: '2022-02-09 15:09:34',
     status: '正常',
-    ipAddrees: '182.48.101.103'
+    ipAddrees: '182.48.101.103',
   },
   {
     id: '7',
@@ -89,7 +88,7 @@ const data = [
     time: '0.231',
     joinTime: '2022-02-09 15:09:34',
     status: '正常',
-    ipAddrees: '171.213.58.73'
+    ipAddrees: '171.213.58.73',
   },
   {
     id: '8',
@@ -102,7 +101,7 @@ const data = [
     time: '0.47',
     joinTime: '2022-02-09 15:09:34',
     status: '正常',
-    ipAddrees: '119.143.100.106'
+    ipAddrees: '119.143.100.106',
   },
   {
     id: '9',
@@ -115,7 +114,7 @@ const data = [
     time: '0.015',
     joinTime: '2022-02-09 15:09:34',
     status: '失败',
-    ipAddrees: '139.162.18.175'
+    ipAddrees: '139.162.18.175',
   },
   {
     id: '10',
@@ -128,7 +127,7 @@ const data = [
     time: '0.015',
     joinTime: '2022-02-09 15:09:34',
     status: '正常',
-    ipAddrees: '14.215.245.130'
+    ipAddrees: '14.215.245.130',
   },
 ]
 
@@ -143,7 +142,7 @@ const loginData = [
     remark: '花开堪折直须折,莫待无花空折枝.',
     joinTime: '2022-02-09 15:09:34',
     ipAddrees: '171.120.210.128',
-    operatingType: '登录成功'
+    operatingType: '登录成功',
   },
   {
     id: '2',
@@ -155,7 +154,7 @@ const loginData = [
     remark: '花开堪折直须折,莫待无花空折枝.',
     joinTime: '2022-02-09 15:09:34',
     operatingType: '登录成功',
-    ipAddrees: '124.92.199.219'
+    ipAddrees: '124.92.199.219',
   },
   {
     id: '3',
@@ -167,7 +166,7 @@ const loginData = [
     remark: '花开堪折直须折,莫待无花空折枝.',
     joinTime: '2022-02-09 15:09:34',
     operatingType: '登录成功',
-    ipAddrees: '39.155.212.237'
+    ipAddrees: '39.155.212.237',
   },
   {
     id: '4',
@@ -179,7 +178,7 @@ const loginData = [
     remark: '花开堪折直须折,莫待无花空折枝.',
     joinTime: '2022-02-09 15:09:34',
     operatingType: '登录失败',
-    ipAddrees: '113.65.14.222'
+    ipAddrees: '113.65.14.222',
   },
   {
     id: '5',
@@ -191,7 +190,7 @@ const loginData = [
     remark: '花开堪折直须折,莫待无花空折枝.',
     joinTime: '2022-02-09 15:09:34',
     operatingType: '登录成功',
-    ipAddrees: '113.128.81.221'
+    ipAddrees: '113.128.81.221',
   },
   {
     id: '6',
@@ -203,7 +202,7 @@ const loginData = [
     remark: '花开堪折直须折,莫待无花空折枝.',
     joinTime: '2022-02-09 15:09:34',
     operatingType: '登录成功',
-    ipAddrees: '182.48.101.103'
+    ipAddrees: '182.48.101.103',
   },
   {
     id: '7',
@@ -215,7 +214,7 @@ const loginData = [
     remark: '花开堪折直须折,莫待无花空折枝.',
     joinTime: '2022-02-09 15:09:34',
     operatingType: '登录成功',
-    ipAddrees: '171.213.58.73'
+    ipAddrees: '171.213.58.73',
   },
   {
     id: '8',
@@ -227,7 +226,7 @@ const loginData = [
     remark: '花开堪折直须折,莫待无花空折枝.',
     joinTime: '2022-02-09 15:09:34',
     operatingType: '登录成功',
-    ipAddrees: '119.143.100.106'
+    ipAddrees: '119.143.100.106',
   },
   {
     id: '9',
@@ -239,7 +238,7 @@ const loginData = [
     remark: '花开堪折直须折,莫待无花空折枝.',
     joinTime: '2022-02-09 15:09:34',
     operatingType: '登录失败',
-    ipAddrees: '139.162.18.175'
+    ipAddrees: '139.162.18.175',
   },
   {
     id: '10',
@@ -251,7 +250,7 @@ const loginData = [
     remark: '花开堪折直须折,莫待无花空折枝.',
     joinTime: '2022-02-09 15:09:34',
     operatingType: '登录成功',
-    ipAddrees: '14.215.245.130'
+    ipAddrees: '14.215.245.130',
   },
 ]
 module.exports = [
