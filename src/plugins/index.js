@@ -1,4 +1,5 @@
 import './element'
+import './particles'
 import './support'
 import '@/styles/sk.scss'
 import '@/remixIcon'

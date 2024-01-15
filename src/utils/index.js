@@ -264,3 +264,15 @@ export const off = (function () {
     }
   }
 })()
+
+/**
+ * @author Elwin
+ * @description browser height
+ */
+export function getClientHeight() {
+  return (
+    window.innerHeight ||
+    document.documentElement.clientHeight ||
+    document.body.clientHeight
+  )
+}

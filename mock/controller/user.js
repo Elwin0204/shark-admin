@@ -1,7 +1,7 @@
 const accessTokens = {
-  admin: 'admin-accessToken',
-  editor: 'editor-accessToken',
-  test: 'test-accessToken',
+  admin: 'Shark_AdminToken',
+  editor: 'Shark_EditorToken',
+  test: 'Shark_TestToken',
 }
 
 module.exports = [
@@ -56,15 +56,15 @@ module.exports = [
       const { accessToken } = config.body
       let permissions = ['admin']
       let username = 'admin'
-      if ('admin-accessToken' === accessToken) {
+      if ('Shark_AdminToken' === accessToken) {
         permissions = ['admin']
         username = 'admin'
       }
-      if ('editor-accessToken' === accessToken) {
+      if ('Shark_EditorToken' === accessToken) {
         permissions = ['editor']
         username = 'editor'
       }
-      if ('test-accessToken' === accessToken) {
+      if ('Shark_TestToken' === accessToken) {
         permissions = ['admin', 'editor']
         username = 'test'
       }

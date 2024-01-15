@@ -36,28 +36,50 @@
         <i :class="foldIcon"></i>
       </div>
     </div>
+    <div class="org-main">
+      <el-tabs v-model="activeName" @tab-click="handleTabClick">
+        <el-tab-pane name="orgRole">
+          <span slot="label">
+            <i class="el-icon-user-solid"></i>
+            组织角色
+          </span>
+          <org-role></org-role>
+        </el-tab-pane>
+        <el-tab-pane name="orgUser">
+          <span slot="label">
+            <i class="el-icon-user"></i>
+            组织用户
+          </span>
+          <org-user></org-user>
+        </el-tab-pane>
+      </el-tabs>
+    </div>
   </div>
 </template>
 
 <script>
   import OrgTree from './components/OrgTree'
+  import OrgUser from './components/OrgUser'
+  import OrgRole from './components/OrgRole'
   import { getOrgList } from '@/api/orgManagement'
+
   export default {
     name: 'OrgManagement',
     components: {
       OrgTree,
+      OrgUser,
+      OrgRole,
     },
     data() {
       return {
-        list: null,
-        listLoading: true,
-        layout: 'total, sizes, prev, pager, next, jumper',
-        total: 0,
-        selectRows: '',
-        elementLoadingText: '正在加载...',
+        activeName: 'orgRole',
         queryForm: {
-          keyWord: '',
-          code: '',
+          pageNo: 1,
+          pageSize: 10,
+          username: '',
+        },
+        userForm: {
+          total: 0,
         },
         isFolded: false,
         sideWidth: 300,
@@ -82,6 +104,9 @@
       handleOrgAdd() {},
       handleOrgEdit() {},
       handleOrgDelete() {},
+      handleUserDelete() {},
+      bindRole() {},
+      handleTabClick(tab, event) {},
       async fetchOrgData() {
         const { data } = await getOrgList()
         this.orgData = data
@@ -117,7 +142,13 @@
     .org-main {
       flex: 1;
       padding: 0 15px;
-      overflow: auto;
+      overflow: hidden;
+      .org-top__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
+      }
     }
 
     ::v-deep {
