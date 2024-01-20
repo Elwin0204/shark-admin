@@ -153,12 +153,6 @@ export const asyncRoutes = [
     meta: { title: '日志管理', icon: 'clipboard-list', permissions: ['admin'] },
     children: [
       {
-        path: 'errlog',
-        name: 'ErrLog',
-        component: () => import('@/views/log/errorLog/index'),
-        meta: { title: '错误日志', permissions: ['admin'] },
-      },
-      {
         path: 'loginlog',
         name: 'LoginLog',
         component: () => import('@/views/log/loginLog/index'),
