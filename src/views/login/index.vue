@@ -41,7 +41,7 @@
           <el-input
             v-model.trim="form.username"
             v-focus
-            placeholder="请输入用户名"
+            placeholder="用户名: admin/editor"
             tabindex="1"
             type="text"
           />
@@ -56,7 +56,7 @@
             v-model.trim="form.password"
             :type="passwordType"
             tabindex="2"
-            placeholder="请输入密码"
+            placeholder="密码: 123456"
             @keyup.enter.native="handleLogin"
           />
           <span

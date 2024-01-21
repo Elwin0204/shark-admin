@@ -2,7 +2,7 @@
  *  build: shark-admin 
  *  shark-admin.com 
  *  https://gitee.com/elwin0204/shark-admin 
- *  time: 2024-1-21 00:17:28
+ *  time: 2024-1-21 23:17:55
  */
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[19],{
 
@@ -930,7 +930,7 @@ var _package_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpac
 /* harmony default export */ __webpack_exports__["default"] = ({
   data() {
     return {
-      updateTime: "2024-1-21 00:17:28",
+      updateTime: "2024-1-21 23:17:55",
       dependencies: _package_json__WEBPACK_IMPORTED_MODULE_0__["dependencies"],
       devDependencies: _package_json__WEBPACK_IMPORTED_MODULE_0__["devDependencies"]
     };

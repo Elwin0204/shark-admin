@@ -2,7 +2,7 @@
  *  build: shark-admin 
  *  shark-admin.com 
  *  https://gitee.com/elwin0204/shark-admin 
- *  time: 2024-1-21 00:17:28
+ *  time: 2024-1-21 23:17:55
  */
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[13],{
 
@@ -339,7 +339,7 @@ var render = function () {
                   _c("el-input", {
                     directives: [{ name: "focus", rawName: "v-focus" }],
                     attrs: {
-                      placeholder: "请输入用户名",
+                      placeholder: "用户名: admin/editor",
                       tabindex: "1",
                       type: "text",
                     },
@@ -374,7 +374,7 @@ var render = function () {
                     attrs: {
                       type: _vm.passwordType,
                       tabindex: "2",
-                      placeholder: "请输入密码",
+                      placeholder: "密码: 123456",
                     },
                     nativeOn: {
                       keyup: function ($event) {
