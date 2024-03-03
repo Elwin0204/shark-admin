@@ -1,7 +1,7 @@
 module.exports = {
   webpackBarName: 'shark-admin',
   webpackBanner:
-    ' build: shark-admin \n shark-admin.com \n https://gitee.com/elwin0204/shark-admin \n time: ',
+    ' build: shark-admin \n https://elwin0204.github.io/shark-admin \n https://github.com/elwin0204/shark-admin \n time: ',
   donationConsole() {
     const chalk = require('chalk')
     console.log(
